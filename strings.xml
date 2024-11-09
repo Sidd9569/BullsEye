@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">Stock Market</string>
+    <string name="nifty_chart">Nifty Chart</string>
+    <string name="bank_nifty_chart">Bank Nifty Chart</string>
+    <string name="bse_chart">BSE Chart</string>
+    <string name="enter_quantity">Enter Quantity</string>
+    <string name="enter_stop_loss">Enter Stop Loss</string>
+    <string name="submit">Submit</string>
+    <string name="no_results_found">No results found</string>
+    <!-- Add other string resources here as needed -->
+</resources>
+

@@ -1,0 +1,155 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    android:background="@drawable/background"> <!-- Background image added here -->
+
+    <!-- Chart ImageViews in a LinearLayout to prevent overlapping -->
+    <LinearLayout
+        android:id="@+id/chartImagesLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/niftyChartImageView"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:visibility="gone"
+            android:src="@drawable/ic_bank_nifty_image" />
+
+        <ImageView
+            android:id="@+id/bankNiftyChartImageView"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:visibility="gone"
+            android:src="@drawable/ic_bank_nifty_image" />
+
+        <ImageView
+            android:id="@+id/bseChartImageView"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:visibility="gone"
+            android:src="@drawable/ic_bse_image" />
+
+        <ImageView
+            android:id="@+id/tataChartImageView"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:visibility="gone"
+            android:src="@drawable/h2" />
+
+        <ImageView
+            android:id="@+id/relianceChartImageView"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:visibility="gone"
+            android:src="@drawable/reliance" />
+
+        <ImageView
+            android:id="@+id/infosysChartImageView"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:visibility="gone"
+            android:src="@drawable/infosys_chart" />
+
+        <ImageView
+            android:id="@+id/hdfcChartImageView"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:visibility="gone"
+            android:src="@drawable/hdfc_chart" />
+
+        <ImageView
+            android:id="@+id/iciciChartImageView"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:visibility="gone"
+            android:src="@drawable/icici_chart" />
+    </LinearLayout>
+
+    <!-- Stock Info -->
+    <TextView
+        android:id="@+id/stockNameTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/chartImagesLayout"
+        android:layout_marginTop="8dp"
+        android:textSize="18sp"
+        android:textColor="#333333" />
+
+    <TextView
+        android:id="@+id/stockValueTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/stockNameTextView"
+        android:layout_marginTop="4dp"
+        android:textSize="16sp"
+        android:textColor="#666666" />
+
+    <!-- Order Inputs -->
+    <EditText
+        android:id="@+id/quantityEditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Quantity"
+        android:layout_below="@id/stockValueTextView"
+        android:layout_marginTop="16dp"
+        android:inputType="number" />
+
+    <EditText
+        android:id="@+id/stopLossEditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Stop Loss"
+        android:layout_below="@id/quantityEditText"
+        android:layout_marginTop="8dp"
+        android:inputType="numberDecimal" />
+
+    <!-- Buy, Sell, Submit Buttons -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_below="@id/stopLossEditText"
+        android:layout_marginTop="16dp">
+
+        <Button
+            android:id="@+id/buyButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Buy"
+            android:backgroundTint="#4CAF50"
+            android:textColor="#FFFFFF" />
+
+        <Button
+            android:id="@+id/sellButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Sell"
+            android:backgroundTint="#F44336"
+            android:textColor="#FFFFFF" />
+
+        <Button
+            android:id="@+id/submitButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Submit"
+            android:backgroundTint="#2196F3"
+            android:textColor="#FFFFFF" />
+    </LinearLayout>
+
+    <!-- ListView for search results -->
+    <ListView
+        android:id="@+id/searchResultListView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/submitButton"
+        android:layout_marginTop="16dp"
+        tools:ignore="NotSibling" />
+</RelativeLayout>
+

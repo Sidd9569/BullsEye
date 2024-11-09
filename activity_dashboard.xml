@@ -1,0 +1,162 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    android:background="@drawable/background"> <!-- Background image added here -->
+
+    <!-- Welcome TextView -->
+    <TextView
+        android:id="@+id/welcomeTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Welcome to the Dashboard"
+        android:textSize="18sp"
+        android:textColor="#333333"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
+
+    <!-- Search Bar -->
+    <EditText
+        android:id="@+id/searchBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Search Stocks..."
+        android:layout_below="@id/welcomeTextView"
+        android:layout_marginTop="12dp"
+        android:imeOptions="actionSearch"
+        android:padding="8dp"
+        android:background="@android:drawable/edit_text"
+        android:textColor="#000000"
+        android:textColorHint="#CCCCCC"
+        android:inputType="text" />
+
+    <!-- Account Balance TextView -->
+    <TextView
+        android:id="@+id/accountMoneyTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Account Balance: $1000.00"
+        android:textSize="16sp"
+        android:textColor="#333333"
+        android:layout_below="@id/searchBar"
+        android:layout_marginTop="16dp"
+        android:layout_alignParentStart="true" />
+
+    <!-- Portfolio Section Heading -->
+    <TextView
+        android:id="@+id/portfolioHeading"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="My Portfolio"
+        android:textSize="18sp"
+        android:textColor="#333333"
+        android:layout_below="@id/accountMoneyTextView"
+        android:layout_marginTop="16dp"
+        android:layout_alignParentStart="true" />
+
+    <!-- Portfolio ListView -->
+    <ListView
+        android:id="@+id/portfolioListView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/portfolioHeading"
+        android:layout_marginTop="8dp"
+        android:divider="@android:color/darker_gray"
+        android:dividerHeight="1dp" />
+
+    <!-- Market Updates Section Heading -->
+    <TextView
+        android:id="@+id/updatesHeading"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Market Updates"
+        android:textSize="18sp"
+        android:textColor="#333333"
+        android:layout_below="@id/portfolioListView"
+        android:layout_marginTop="16dp"
+        android:layout_alignParentStart="true" />
+
+    <!-- Watchlist ListView -->
+    <ListView
+        android:id="@+id/watchlistListView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/updatesHeading"
+        android:layout_marginTop="8dp"
+        android:divider="@android:color/darker_gray"
+        android:dividerHeight="1dp" />
+
+    <!-- Market News Section Heading -->
+    <TextView
+        android:id="@+id/marketNewsHeading"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Market News"
+        android:textSize="18sp"
+        android:textColor="#333333"
+        android:layout_below="@id/watchlistListView"
+        android:layout_marginTop="16dp"
+        android:layout_alignParentStart="true" />
+
+    <!-- ViewFlipper for rotating images and market updates -->
+    <ViewFlipper
+        android:id="@+id/viewFlipper"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_below="@id/marketNewsHeading"
+        android:layout_marginTop="8dp">
+
+        <!-- First View: Nifty update -->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="200dp">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:src="@drawable/img_2"
+                android:scaleType="centerCrop" />
+
+        </RelativeLayout>
+
+        <!-- Second View: Bank Nifty update -->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="200dp">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:src="@drawable/img_3"
+                android:scaleType="centerCrop" />
+
+        </RelativeLayout>
+
+        <!-- Third View: BSE update -->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="200dp">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:src="@drawable/img_4"
+                android:scaleType="centerCrop" />
+
+        </RelativeLayout>
+    </ViewFlipper>
+
+    <!-- Settings Button at the Bottom Right -->
+    <Button
+        android:id="@+id/settingsButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Settings"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginBottom="16dp"
+        android:layout_marginEnd="16dp" />
+
+</RelativeLayout>
+
+
