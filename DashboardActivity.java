@@ -1,5 +1,6 @@
 package com.example.stockmarket;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
@@ -12,14 +13,14 @@ import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.ViewFlipper;
+
 import androidx.appcompat.app.AppCompatActivity;
+
 import java.util.ArrayList;
 import java.util.List;
-import android.app.Activity;
 
 public class DashboardActivity extends AppCompatActivity {
 
-    // Declare the Settings button
     private Button settingsButton;
     private static final int REQUEST_CODE_SEARCH = 1;
 
@@ -52,10 +53,8 @@ public class DashboardActivity extends AppCompatActivity {
         watchlistListView = findViewById(R.id.watchlistListView);
         viewFlipper = findViewById(R.id.viewFlipper);
 
-        // Initialize the settings button
         settingsButton = findViewById(R.id.settingsButton);
 
-        // Add click listener for settings button
         settingsButton.setOnClickListener(v -> {
             Intent intent = new Intent(DashboardActivity.this, SettingsActivity.class);
             startActivity(intent);
@@ -88,7 +87,6 @@ public class DashboardActivity extends AppCompatActivity {
         };
         handler.post(marketPriceUpdater);
 
-        // Handle search bar input
         searchBar.setOnEditorActionListener((textView, actionId, keyEvent) -> {
             if (actionId == EditorInfo.IME_ACTION_SEARCH ||
                     (keyEvent != null && keyEvent.getKeyCode() == KeyEvent.KEYCODE_ENTER && keyEvent.getAction() == KeyEvent.ACTION_DOWN)) {
@@ -98,7 +96,6 @@ public class DashboardActivity extends AppCompatActivity {
             return false;
         });
 
-        // Start image flipping
         viewFlipper.setFlipInterval(3000);
         viewFlipper.startFlipping();
     }
@@ -128,10 +125,13 @@ public class DashboardActivity extends AppCompatActivity {
         super.onActivityResult(requestCode, resultCode, data);
         if (requestCode == REQUEST_CODE_SEARCH && resultCode == Activity.RESULT_OK) {
             String purchasedStock = data.getStringExtra("purchasedStock");
+            String soldStock = data.getStringExtra("soldStock");
             if (purchasedStock != null) {
                 portfolioItems.add(purchasedStock);
-                portfolioAdapter.notifyDataSetChanged();
+            } else if (soldStock != null) {
+                portfolioItems.add(soldStock);
             }
+            portfolioAdapter.notifyDataSetChanged();
         }
     }
 
@@ -141,6 +141,3 @@ public class DashboardActivity extends AppCompatActivity {
         handler.removeCallbacks(marketPriceUpdater);
     }
 }
-
-
-
