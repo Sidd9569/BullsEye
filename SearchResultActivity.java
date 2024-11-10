@@ -17,10 +17,11 @@ import java.util.List;
 public class SearchResultActivity extends AppCompatActivity {
 
     private ImageView niftyChartImageView, bankNiftyChartImageView, bseChartImageView;
+    private ImageView tataChartImageView, relianceChartImageView, infosysChartImageView, hdfcChartImageView, iciciChartImageView;
     private TextView stockNameTextView, stockValueTextView;
     private EditText quantityEditText, stopLossEditText;
     private ListView searchResultListView;
-    private Button buyButton, sellButton, submitButton;
+    private Button buyButton, sellButton;
 
     private List<String> filteredItems;
     private CustomAdapter adapter;
@@ -36,6 +37,11 @@ public class SearchResultActivity extends AppCompatActivity {
         niftyChartImageView = findViewById(R.id.niftyChartImageView);
         bankNiftyChartImageView = findViewById(R.id.bankNiftyChartImageView);
         bseChartImageView = findViewById(R.id.bseChartImageView);
+        tataChartImageView = findViewById(R.id.tataChartImageView);
+        relianceChartImageView = findViewById(R.id.relianceChartImageView);
+        infosysChartImageView = findViewById(R.id.infosysChartImageView);
+        hdfcChartImageView = findViewById(R.id.hdfcChartImageView);
+        iciciChartImageView = findViewById(R.id.iciciChartImageView);
         stockNameTextView = findViewById(R.id.stockNameTextView);
         stockValueTextView = findViewById(R.id.stockValueTextView);
         quantityEditText = findViewById(R.id.quantityEditText);
@@ -43,7 +49,6 @@ public class SearchResultActivity extends AppCompatActivity {
         searchResultListView = findViewById(R.id.searchResultListView);
         buyButton = findViewById(R.id.buyButton);
         sellButton = findViewById(R.id.sellButton);
-        submitButton = findViewById(R.id.submitButton);
 
         filteredItems = new ArrayList<>();
         adapter = new CustomAdapter(this, filteredItems);
@@ -63,11 +68,11 @@ public class SearchResultActivity extends AppCompatActivity {
 
         buyButton.setOnClickListener(v -> handleTransaction("buy"));
         sellButton.setOnClickListener(v -> handleTransaction("sell"));
-        submitButton.setOnClickListener(v -> handleTransaction("submit"));
     }
 
     private void filterSearchResults(String query) {
         stockNameTextView.setText("No results found");
+        // Match the query to the company names and show the relevant chart
         switch (query.toLowerCase()) {
             case "nifty":
                 displayStock("Nifty", niftyChartImageView);
@@ -77,6 +82,21 @@ public class SearchResultActivity extends AppCompatActivity {
                 break;
             case "bse":
                 displayStock("BSE", bseChartImageView);
+                break;
+            case "reliance":
+                displayStock("Reliance", relianceChartImageView);
+                break;
+            case "tata":
+                displayStock("Tata", tataChartImageView);
+                break;
+            case "infosys":
+                displayStock("Infosys", infosysChartImageView);
+                break;
+            case "hdfc":
+                displayStock("HDFC", hdfcChartImageView);
+                break;
+            case "icici":
+                displayStock("ICICI", iciciChartImageView);
                 break;
             default:
                 filteredItems.add("No results found for " + query);
@@ -107,9 +127,6 @@ public class SearchResultActivity extends AppCompatActivity {
         } else if (action.equals("sell")) {
             filteredItems.add("Sold " + quantity + " shares of " + stockName + " at $" + stockPrice);
             adapter.notifyDataSetChanged();
-        } else if (action.equals("submit")) {
-            filteredItems.add("Stop Loss set for " + stockName + " at $" + stockPrice);
-            adapter.notifyDataSetChanged();
         }
     }
 
@@ -119,3 +136,4 @@ public class SearchResultActivity extends AppCompatActivity {
         handler.removeCallbacks(priceUpdater);
     }
 }
+
