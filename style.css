@@ -1,0 +1,327 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+.logo{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 50;
+    padding-right:5%;
+}
+.logo img{
+    width: 40%;
+    border: 3px solid rgb(46, 48, 45);
+    border-radius: 20px
+}
+.navbar{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: sticky;
+    top: 0;
+    cursor: pointer;
+}
+.nav-list{
+    width: 70%;
+    display: flex;
+    align-items: center;
+}
+
+.nav-list li{
+    list-style: none;
+    padding: 10px 15px;
+
+}
+
+.nav-list li a{
+    text-decoration: none;
+    color: white;
+
+}
+
+.nav-list li a:hover{
+    text-decoration: none;
+    color: grey;
+}    
+.rightnav{
+    width: 50%;
+    text-align: right;
+    padding: 23px;
+}
+#search{
+    padding: 7px;
+    font-size: 17px;
+    border: 2px solid grey;
+    border-radius: 9px;
+}
+.background{
+    background: rgba(0,0,0,0.7) url(1.png);
+    background-size: cover;
+    background-blend-mode: darken;
+}
+
+.firstsection{
+    height: 100vh;
+}
+.box-main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    max-width: 50%;
+    margin: auto;
+    height: 70%;
+}
+
+.firsthalf{
+    width:85%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.secondhalf{
+    width: 30%;
+    
+}
+
+.secondhalf img{
+    width: 500px;
+    border: 4px solid rgb(9, 9, 9);
+    display: block;
+    border-radius: 20px;
+    margin: auto;
+}
+
+.text-big{
+    font-size: 41px ;
+}
+
+.text-small{
+    font-size:18px ;
+}
+
+.btn{
+    padding: 7px 20px;
+    margin: 7px 3px;
+    border: 2px solid white;
+    border-radius: 8px;
+    font-size: 18px;
+    background: none;
+    color: white;
+    cursor: pointer;
+
+}
+
+.btn-sm{
+    padding: 6px 10px;
+    
+
+}
+
+.section{
+    height: 55vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    max-width: 80%;
+    margin-left: 120px;
+}
+
+.section-left{
+    flex-direction: row-reverse;
+    
+}
+
+
+.paras{
+    padding: 0px 80px;
+    height: 10vh;
+    
+}
+
+.sectionsubtag{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.section-up{
+    flex-direction: row-reverse;
+
+
+}
+.sectiontag{
+    padding: 16px 0;
+}
+.thumbnail img{
+    width: 500px;
+    border: 2px solid black;
+    border-radius: 26px;
+    margin-top: 200px;
+    animation-name:city1;
+    animation-duration: 2s; 
+    animation-iteration-count: 2;
+    
+
+}
+
+@keyframes city1 {
+    from{
+        width: 100px;
+    }
+    to{
+        width: 500px;
+    }
+    
+}
+
+.container{
+    box-sizing: border-box;
+    font-family: sans-serif;
+    display: flex;
+    align-items: center;
+    height: 65vh;
+    margin: auto;
+    width: 600px;
+    flex-direction: column;
+    gap: 20px;
+    background: #f5f8ff;
+    margin-top: 140px;
+}
+
+.container h1{
+    color: #333;
+}
+
+.container .tab{
+    position: relative;
+    background: #fff;
+    padding: 0 20px 20px;
+    box-shadow: 0 15px 25px rgba(0,0,0,0.5);
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.container .tab input{
+    appearance: none;
+}
+
+.container .tab label{
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.container .tab label::after{
+    content: '+';
+    position: absolute;
+    right: 20px;
+    font-size: 2em;
+    color: rgba(0,0,0,0.1);
+    transition: transform 1s;
+}
+
+.container .tab:hover label::after{
+    color: #333;
+}
+
+.container .tab input:checked ~ label::after{
+    transform: rotate(135deg);
+    color: #fff;
+}
+
+.container .tab label h2{
+    width: 40px;
+    height: 40px;
+    background: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    font-size: 1.25em;
+    border-radius: 5px;
+    margin-right: 10px;
+}
+
+.container .tab input:checked ~ label h2{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    color: rgba(255,255,255,0.2);
+    font-size: 8em;
+    justify-content: flex-end;
+    padding: 20px;
+}
+
+
+.container .tab:nth-child(2) label h2{
+    background: linear-gradient(135deg,#70f570,#49c628);
+}
+
+.container .tab:nth-child(3) label h2{
+    background: linear-gradient(135deg,#3c8ce7,#00eaff);
+}
+
+.container .tab:nth-child(4) label h2{
+    background: linear-gradient(135deg,#ff96f9,#c32bac);
+}
+
+.container .tab:nth-child(5) label h2{
+    background: linear-gradient(135deg,#fd6e6a,#ffc600);
+}
+
+.container .tab label h3{
+    position: relative;
+    font-weight: 500;
+    color: #333;
+    z-index: 10;
+}
+
+.container .tab input:checked ~ label h3{
+    background: #fff;
+    padding: 2px 10px;
+    color: #333;
+    border-radius: 2px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+}
+
+.container .tab .content{
+    max-height:0;
+    transition: 1s;
+    overflow: hidden;
+}
+
+.container .tab input:checked~ .content{
+    max-height: 100vh;
+
+}
+
+.container .tab .content p{
+    position: relative;
+    padding:10px 0;
+    color: #333;
+    z-index: 10;
+
+}
+
+.container .tab input:checked~ .content p{
+    color: #fff;
+}
+
+.text-footer{
+    text-align: center;
+    height: 10vh;
+    padding-top: 50px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    justify-content: center;
+
+}

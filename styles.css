@@ -1,0 +1,188 @@
+/* General Reset */
+body, html {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+  }
+  
+  body {
+    background-color: #f8f9fa;
+  }
+  
+  /* Gradient Custom Background */
+  .gradient-custom-2 {
+    /* Fallback for old browsers */
+    background: #fccb90;
+  
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: -webkit-linear-gradient(to right, #ee7724, #d8363a, #dd3675, #b44593);
+  
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background: linear-gradient(to right, #ee7724, #d8363a, #dd3675, #b44593);
+    color: #ffffff;
+    padding: 3rem;
+  }
+  
+  @media (min-width: 769px) {
+    .gradient-custom-2 {
+      border-top-right-radius: 0.3rem;
+      border-bottom-right-radius: 0.3rem;
+    }
+  }
+  
+  /* Form Section */
+  .gradient-form {
+    background-color: #eeeeee;
+    padding: 3rem 1rem;
+    border-radius: 0.3rem;
+  }
+  
+  @media (min-width: 768px) {
+    .gradient-form {
+      height: 100vh !important;
+    }
+  }
+  
+  /* Card Styling */
+  .card {
+    border: none;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .card-body {
+    padding: 2rem;
+  }
+  
+  .text-center img {
+    margin-bottom: 1rem;
+  }
+  
+  .text-center h4 {
+    font-weight: 700;
+  }
+  
+  /* Form Inputs */
+  .form-outline {
+    margin-bottom: 1.5rem;
+  }
+  
+  .form-control {
+    border: 1px solid #ced4da;
+    border-radius: 0.25rem;
+    padding: 0.75rem;
+    font-size: 1rem;
+    width: 100%;
+  }
+  
+  .form-control:focus {
+    outline: none;
+    border-color: #d8363a;
+    box-shadow: 0 0 5px rgba(216, 54, 58, 0.5);
+  }
+  
+  .form-label {
+    font-size: 0.85rem;
+    color: #495057;
+    margin-bottom: 0.5rem;
+    display: block;
+  }
+  
+  /* Buttons */
+  button {
+    font-size: 1rem;
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 0.25rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  button.btn-primary {
+    background-color: #d8363a;
+    color: #ffffff;
+  }
+  
+  button.btn-primary:hover {
+    background-color: #b44593;
+  }
+  
+  button.btn-outline-danger {
+    border: 2px solid #d8363a;
+    color: #d8363a;
+    background: none;
+  }
+  
+  button.btn-outline-danger:hover {
+    background-color: #d8363a;
+    color: #ffffff;
+  }
+  
+  /* Links */
+  .text-muted {
+    font-size: 0.9rem;
+    text-decoration: none;
+    color: #6c757d;
+  }
+  
+  .text-muted:hover {
+    color: #d8363a;
+    text-decoration: underline;
+  }
+  
+  /* Content Styling */
+  .text-white {
+    font-size: 1rem;
+    line-height: 1.5;
+  }
+  
+  .text-white h4 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+  }
+  
+  .text-white p {
+    font-size: 0.9rem;
+  }
+  
+  /* Layout Adjustments */
+  .container {
+    max-width: 1140px;
+    margin: 0 auto;
+  }
+  
+  .row {
+    margin: 0 -15px;
+  }
+  
+  .col-xl-10, .col-lg-6 {
+    padding: 0 15px;
+  }
+  
+  /* Spacing */
+  .py-5 {
+    padding-top: 3rem !important;
+    padding-bottom: 3rem !important;
+  }
+  
+  .p-md-5 {
+    padding: 3rem !important;
+  }
+  
+  .mx-md-4 {
+    margin: 0 1.5rem !important;
+  }
+  
+  .mb-4, .mb-5 {
+    margin-bottom: 1.5rem !important;
+  }
+  
+  .pb-1, .pb-4 {
+    padding-bottom: 1rem !important;
+  }
+  
+  .pt-1 {
+    padding-top: 1rem !important;
+  }
